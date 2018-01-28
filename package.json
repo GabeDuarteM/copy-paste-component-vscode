@@ -45,6 +45,11 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "standard-version": {
+    "skip": {
+      "commit": true
+    }
+  },
   "devDependencies": {
     "@types/mocha": "^2.2.42",
     "@types/node": "^7.0.43",
