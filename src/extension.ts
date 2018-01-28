@@ -11,7 +11,8 @@ export function activate(context: vscode.ExtensionContext) {
     "extension.cpc",
     async (file: vscode.Uri) => {
       const componentPath: string = file.fsPath
-      const { rootPath } = vscode.workspace
+      const workspaceFolder = vscode.workspace.getWorkspaceFolder(file).uri
+        .fsPath
 
       const newComponentName = await vscode.window.showInputBox({
         ignoreFocusOut: true,
@@ -19,10 +20,14 @@ export function activate(context: vscode.ExtensionContext) {
         prompt: "What is the name of the new component?",
       })
 
+      if (!newComponentName) {
+        return
+      }
+
       const defaultComponentPath = getDefaultComponentPath(
         componentPath,
         newComponentName,
-      ).replace(rootPath + slash, "")
+      ).replace(workspaceFolder + slash, "")
 
       const newComponentPath = await vscode.window.showInputBox({
         ignoreFocusOut: true,
@@ -31,10 +36,14 @@ export function activate(context: vscode.ExtensionContext) {
         value: defaultComponentPath,
       })
 
+      if (!newComponentPath) {
+        return
+      }
+
       await copyPasteComponent(
         componentPath,
         newComponentName,
-        join(rootPath, newComponentPath),
+        join(workspaceFolder, newComponentPath),
       )
 
       vscode.window.showInformationMessage(
