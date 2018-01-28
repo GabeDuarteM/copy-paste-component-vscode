@@ -2,7 +2,7 @@
   "name": "copy-paste-component-vscode",
   "displayName": "copy-paste-component-vscode",
   "description": "A tool to create components, by copying and pasting existing ones.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "GabrielDuarteM",
   "license": "MIT",
   "engines": {
@@ -33,6 +33,7 @@
   },
   "scripts": {
     "commit": "git-cz",
+    "release": "standard-version",
     "start": "yarn watch",
     "vscode:prepublish": "yarn compile",
     "compile": "tsc -p ./",
@@ -49,6 +50,7 @@
     "@types/node": "^7.0.43",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
+    "standard-version": "^4.3.0",
     "typescript": "^2.6.1",
     "vscode": "^1.1.6"
   },
