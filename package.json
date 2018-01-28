@@ -21,25 +21,12 @@
     "Other"
   ],
   "keywords": [
-    "frontend",
-    "front-end",
-    "development",
-    "dev",
-    "web",
-    "generate",
     "generator",
     "component",
-    "components",
     "copy",
-    "paste",
-    "tool",
     "scaffold",
-    "app",
-    "boilerplate",
-    "pattern",
-    "patterns",
-    "convention",
-    "conventions"
+    "boilerplate"
+    
   ],
   "galleryBanner": {
     "color": "#21252b",
