@@ -52,6 +52,8 @@ const NewApp = () => <div>Hello World</div>
 export default NewApp
 ```
 
+![Usage](https://i.imgur.com/dQI2Ijl.gif)
+
 ## For more information
 
 * [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) A tool to create components, by copying and pasting existing ones.
