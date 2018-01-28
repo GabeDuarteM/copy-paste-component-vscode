@@ -1,16 +1,53 @@
 {
   "name": "copy-paste-component-vscode",
-  "displayName": "copy-paste-component-vscode",
-  "description": "A tool to create components, by copying and pasting existing ones.",
+  "displayName": "Copy paste component",
+  "description": "An extension to create/generate components, by copying and pasting existing ones.",
+  "homepage": "https://github.com/GabrielDuarteM/copy-paste-component-vscode",
+  "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielDuarteM/copy-paste-component-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GabrielDuarteM/copy-paste-component-vscode/issues"
+  },
+  "categories": [
+    "Languages",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "frontend",
+    "front-end",
+    "development",
+    "dev",
+    "web",
+    "generate",
+    "generator",
+    "component",
+    "components",
+    "copy",
+    "paste",
+    "tool",
+    "scaffold",
+    "app",
+    "boilerplate",
+    "pattern",
+    "patterns",
+    "convention",
+    "conventions"
+  ],
+  "galleryBanner": {
+    "color": "#21252b",
+    "theme": "dark"
+  },
+  "icon": "assets/icon.png",
   "version": "1.0.0",
   "publisher": "GabrielDuarteM",
   "license": "MIT",
   "engines": {
     "vscode": "^1.19.0"
   },
-  "categories": [
-    "Other"
-  ],
   "activationEvents": [
     "onCommand:extension.cpc"
   ],
