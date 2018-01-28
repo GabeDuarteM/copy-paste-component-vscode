@@ -4,6 +4,10 @@
   "description": "An extension to create/generate components, by copying and pasting existing ones.",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component-vscode",
   "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
+  "icon": "assets/icon.png",
+  "version": "1.0.0",
+  "publisher": "GabrielDuarteM",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/GabrielDuarteM/copy-paste-component-vscode.git"
@@ -41,10 +45,6 @@
     "color": "#21252b",
     "theme": "dark"
   },
-  "icon": "assets/icon.png",
-  "version": "1.0.0",
-  "publisher": "GabrielDuarteM",
-  "license": "MIT",
   "engines": {
     "vscode": "^1.19.0"
   },
