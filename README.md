@@ -58,6 +58,10 @@ export default NewApp
 
 * [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) A tool to create components, by copying and pasting existing ones.
 
+## Change log
+
+See [Change log](https://github.com/GabrielDuarteM/copy-paste-component-vscode/blob/master/CHANGELOG.md).
+
 ## License
 
 MIT
