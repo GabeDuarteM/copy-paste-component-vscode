@@ -1,65 +1,61 @@
-# copy-paste-component-vscode README
+# [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) for Visual Studio Code
 
-This is the README for your extension "copy-paste-component-vscode". After writing up a brief description, we recommend including the following sections.
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-## Features
+An extension to create components, by copying and pasting existing ones. It integrates the [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) tool directly inside Visual Studio Code.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+If you have the structure below:
 
-For example if there is an image subfolder under your extension project workspace:
+```
+src/components/App/App.js
+src/components/App/App.test.js
+src/components/App/App.stories.js
+src/components/App/index.js
+```
 
-\!\[feature X\]\(images/feature-x.png\)
+when you run the extension, it will create the following structure, replacing occurrences of the word `App` inside the files to `NewApp`:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```
+src/components/NewApp/NewApp.js
+src/components/NewApp/NewApp.test.js
+src/components/NewApp/NewApp.stories.js
+src/components/NewApp/index.js
+```
 
-## Requirements
+## Usage
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Just right click the component that you would like to copy and click `Copy and paste component`. After this, you will be prompted with a couple of questions about the new component, and then it will generate a structure that is the same as the one that the selected component uses, but it will change the filename to the one you provided.
+It will also look inside the file for occurrences of the filename, and if it finds, it replaces with the one you provided.
 
-## Extension Settings
+So, given the following file:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### App.js
 
-For example:
+```js
+import React from "react"
 
-This extension contributes the following settings:
+const App = () => <div>Hello World</div>
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+export default App
+```
 
-## Known Issues
+Becomes the following:
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### NewApp.js
 
-## Release Notes
+```js
+import React from "react"
 
-Users appreciate release notes as you update your extension.
+const NewApp = () => <div>Hello World</div>
 
-### 1.0.0
+export default NewApp
+```
 
-Initial release of ...
+## For more information
 
-### 1.0.1
+* [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) A tool to create components, by copying and pasting existing ones.
 
-Fixed issue #.
+## License
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+MIT
