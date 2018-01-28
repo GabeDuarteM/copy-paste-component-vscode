@@ -8,5 +8,5 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **init:** :tada: initial commit ([98012e8](https://github.com/GabrielDuarteM/copy-paste-component-vscode/commit/98012e8))
+* **init:** 🎉 initial commit ([98012e8](https://github.com/GabrielDuarteM/copy-paste-component-vscode/commit/98012e8))
 * **workspaces:** added the possibility to work on multiple workspaces ([e7f19d9](https://github.com/GabrielDuarteM/copy-paste-component-vscode/commit/e7f19d9))
