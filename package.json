@@ -5,7 +5,7 @@
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component-vscode",
   "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "icon": "assets/icon.png",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "GabrielDuarteM",
   "license": "MIT",
   "repository": {
@@ -26,7 +26,6 @@
     "copy",
     "scaffold",
     "boilerplate"
-    
   ],
   "galleryBanner": {
     "color": "#21252b",
