@@ -3,8 +3,10 @@ import * as vscode from "vscode"
 import {
   getDefaultComponentPath,
   copyPasteComponent,
+  componentFinder,
 } from "copy-paste-component"
-import { join, sep as slash, resolve } from "path"
+import { join, sep as slash, resolve, normalize } from "path"
+import { lstatSync } from "fs"
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
@@ -14,6 +16,15 @@ export function activate(context: vscode.ExtensionContext) {
       const workspaceFolder = vscode.workspace.getWorkspaceFolder(file).uri
         .fsPath
 
+      const isValidComponent = await validatePath(
+        workspaceFolder,
+        componentPath,
+      )
+
+      if (!isValidComponent) {
+        return
+      }
+
       const newComponentName = await vscode.window.showInputBox({
         ignoreFocusOut: true,
         placeHolder: "App",
@@ -21,6 +32,9 @@ export function activate(context: vscode.ExtensionContext) {
       })
 
       if (!newComponentName) {
+        vscode.window.showErrorMessage(
+          `The name "${newComponentName}" is not valid.`,
+        )
         return
       }
 
@@ -37,6 +51,9 @@ export function activate(context: vscode.ExtensionContext) {
       })
 
       if (!newComponentPath) {
+        vscode.window.showErrorMessage(
+          `The location "${newComponentPath}" is not valid.`,
+        )
         return
       }
 
@@ -53,4 +70,37 @@ export function activate(context: vscode.ExtensionContext) {
   )
 
   context.subscriptions.push(disposable)
+}
+
+const validatePath = async (
+  workspaceFolder,
+  componentPath,
+): Promise<boolean> => {
+  const arrComponentPathDenormalized = await componentFinder(workspaceFolder)
+  const arrComponentPath = arrComponentPathDenormalized.map(path =>
+    normalize(path),
+  )
+
+  const pathInfo = lstatSync(componentPath)
+
+  if (pathInfo.isDirectory()) {
+    vscode.window.showErrorMessage(
+      `The path that you tried to copy is a folder. Please, select the file that contains the component.`,
+    )
+    return false
+  }
+
+  const relativeComponentPath = componentPath.replace(
+    workspaceFolder + slash,
+    "",
+  )
+
+  if (!arrComponentPath.includes(relativeComponentPath)) {
+    vscode.window.showErrorMessage(
+      `File ${componentPath} is not a valid component.`,
+    )
+    return false
+  }
+
+  return true
 }
