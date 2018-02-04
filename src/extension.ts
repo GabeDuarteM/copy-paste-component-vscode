@@ -1,12 +1,12 @@
 "use strict"
-import * as vscode from "vscode"
 import {
-  getDefaultComponentPath,
-  copyPasteComponent,
   componentFinder,
+  copyPasteComponent,
+  getDefaultComponentPath,
 } from "copy-paste-component"
-import { join, sep as slash, normalize } from "path"
 import { lstatSync } from "fs"
+import { join, normalize, sep as slash } from "path"
+import * as vscode from "vscode"
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
