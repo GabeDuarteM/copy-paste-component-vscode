@@ -8,7 +8,7 @@ import { lstatSync } from "fs"
 import { join, normalize, sep as slash } from "path"
 import * as vscode from "vscode"
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: vscode.ExtensionContext): void {
   const disposable = vscode.commands.registerCommand(
     "extension.cpc",
     async (file: vscode.Uri) => {
@@ -82,12 +82,10 @@ const validatePath = async (
   workspaceFolder: string,
   componentPath: string,
 ): Promise<boolean> => {
-  const arrComponentPathDenormalized: string[] = await componentFinder(
+  const arrCompPathDenormalized: ReadonlyArray<string> = await componentFinder(
     workspaceFolder,
   )
-  const arrComponentPath = arrComponentPathDenormalized.map(path =>
-    normalize(path),
-  )
+  const arrComponentPath = arrCompPathDenormalized.map(path => normalize(path))
 
   const pathInfo = lstatSync(componentPath)
 

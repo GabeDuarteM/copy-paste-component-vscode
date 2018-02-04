@@ -1,10 +1,30 @@
 {
   "extends": [
     "tslint:recommended",
-    "tslint-config-prettier"
+    "tslint-config-prettier",
+    "tslint-immutable"
   ],
   "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
-    "prettier": true
+    "prettier": true,
+
+    /**
+    * tslint-immutable rules
+    * https://github.com/jonaskello/tslint-immutable#tslint-rules
+    */
+
+    // Recommended built-in rules
+    "no-var-keyword": true,
+    "no-parameter-reassignment": true,
+    "typedef": [true, "call-signature"],
+    
+    // Immutability rules
+    "readonly-keyword": true,
+    "readonly-array": true,
+    "no-let": true,
+    "no-object-mutation": true,
+    "no-method-signature": true,
+    "no-delete": true
+
   }
 }
