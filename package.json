@@ -63,7 +63,7 @@
     "build": "tsc -p ./",
     "build:ci": "yarn vscode:prepublish",
     "watch": "yarn build -watch",
-    "lint": "yarn tslint -p tsconfig.json -t stylish",
+    "lint": "yarn tslint -p tsconfig.json -t code-frame",
     "lint:fix": "yarn lint --fix",
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
