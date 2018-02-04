@@ -14,6 +14,8 @@
         "removeComments": true,
         "forceConsistentCasingInFileNames": true,
         "noImplicitReturns": true,
+        "noEmitOnError": true,
+        "pretty": true,
         "typeRoots": ["./node_modules/@types/", "./@types"]
     },
     "exclude": [
