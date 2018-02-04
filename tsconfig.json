@@ -8,8 +8,6 @@
         ],
         "sourceMap": true,
         "rootDir": "src", 
-        "noUnusedLocals": true,
-        "noUnusedParameters": false,
         "strict": true,
         "removeComments": true,
         "forceConsistentCasingInFileNames": true,

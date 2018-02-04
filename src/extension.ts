@@ -8,7 +8,7 @@ import { lstatSync } from "fs"
 import { join, normalize, sep as slash } from "path"
 import * as vscode from "vscode"
 
-export function activate(context: vscode.ExtensionContext): void {
+export const activate: (context: vscode.ExtensionContext) => void = context => {
   const disposable = vscode.commands.registerCommand(
     "extension.cpc",
     async (file: vscode.Uri) => {
@@ -41,6 +41,7 @@ export function activate(context: vscode.ExtensionContext): void {
         vscode.window.showErrorMessage(
           `The name "${newComponentName}" is not valid.`,
         )
+
         return
       }
 
@@ -60,6 +61,7 @@ export function activate(context: vscode.ExtensionContext): void {
         vscode.window.showErrorMessage(
           `The location "${newComponentPath}" is not valid.`,
         )
+
         return
       }
 
@@ -93,6 +95,7 @@ const validatePath = async (
     vscode.window.showErrorMessage(
       `The path that you tried to copy is a folder. Please, select the file that contains the component.`,
     )
+
     return false
   }
 
@@ -105,6 +108,7 @@ const validatePath = async (
     vscode.window.showErrorMessage(
       `File ${componentPath} is not a valid component.`,
     )
+
     return false
   }
 
