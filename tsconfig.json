@@ -7,7 +7,14 @@
             "es6"
         ],
         "sourceMap": true,
-        "rootDir": "src"
+        "rootDir": "src", 
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "strict": true,
+        "removeComments": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "typeRoots": ["./node_modules/@types/", "./@types"]
     },
     "exclude": [
         "node_modules",
