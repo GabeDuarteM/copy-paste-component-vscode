@@ -5,6 +5,8 @@
 
 An extension to create components, by copying and pasting existing ones. It integrates the [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) tool directly inside Visual Studio Code.
 
+![Usage](https://i.imgur.com/dQI2Ijl.gif)
+
 If you have the structure below:
 
 ```
@@ -51,8 +53,6 @@ const NewApp = () => <div>Hello World</div>
 
 export default NewApp
 ```
-
-![Usage](https://i.imgur.com/dQI2Ijl.gif)
 
 ## For more information
 
