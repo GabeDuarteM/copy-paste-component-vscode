@@ -55,7 +55,7 @@
     }
   },
   "scripts": {
-    "commit": "git-cz",
+    "cz": "git-cz",
     "precommit": "yarn build:ci",
     "release": "standard-version",
     "start": "yarn watch",
