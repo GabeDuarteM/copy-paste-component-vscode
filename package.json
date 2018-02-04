@@ -57,7 +57,7 @@
   "scripts": {
     "cz": "git-cz",
     "precommit": "yarn build:ci",
-    "release": "standard-version",
+    "semantic-release": "semantic-release",
     "start": "yarn watch",
     "vscode:prepublish": "yarn lint && yarn build",
     "build": "tsc -p ./",
@@ -72,19 +72,34 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "standard-version": {
-    "skip": {
-      "commit": true
-    }
+  "release": {
+    "verifyConditions": [
+      "semantic-release-vsce",
+      "@semantic-release/github"
+    ],
+    "getLastRelease": "@semantic-release/git",
+    "publish": [
+      {
+        "path": "semantic-release-vsce",
+        "packageVsix": "copy-paste-component-vscode.vsix"
+      },
+      {
+        "path": "@semantic-release/github",
+        "assets": "copy-paste-component-vscode.vsix"
+      }
+    ]
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.48",
+    "@semantic-release/git": "2.2.0",
+    "@semantic-release/github": "^4.0.2",
     "@types/node": "^9.4.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^0.14.3",
     "prettier": "^1.10.2",
-    "standard-version": "^4.3.0",
+    "semantic-release": "^12.4.1",
+    "semantic-release-vsce": "^2.0.0",
+    "travis-deploy-once": "^4.3.4",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.7.0",
     "tslint-consistent-codestyle": "^1.11.0",
