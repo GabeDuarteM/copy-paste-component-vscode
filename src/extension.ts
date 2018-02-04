@@ -5,7 +5,7 @@ import {
   copyPasteComponent,
   componentFinder,
 } from "copy-paste-component"
-import { join, sep as slash, resolve, normalize } from "path"
+import { join, sep as slash, normalize } from "path"
 import { lstatSync } from "fs"
 
 export function activate(context: vscode.ExtensionContext) {
@@ -13,11 +13,17 @@ export function activate(context: vscode.ExtensionContext) {
     "extension.cpc",
     async (file: vscode.Uri) => {
       const componentPath: string = file.fsPath
-      const workspaceFolder = vscode.workspace.getWorkspaceFolder(file).uri
-        .fsPath
+
+      const workspaceFolder = vscode.workspace.getWorkspaceFolder(file)
+
+      if (!workspaceFolder) {
+        throw new Error("Workspace folder not found")
+      }
+
+      const workspaceFolderFsPath = workspaceFolder.uri.fsPath
 
       const isValidComponent = await validatePath(
-        workspaceFolder,
+        workspaceFolderFsPath,
         componentPath,
       )
 
@@ -41,7 +47,7 @@ export function activate(context: vscode.ExtensionContext) {
       const defaultComponentPath = getDefaultComponentPath(
         componentPath,
         newComponentName,
-      ).replace(workspaceFolder + slash, "")
+      ).replace(workspaceFolderFsPath + slash, "")
 
       const newComponentPath = await vscode.window.showInputBox({
         ignoreFocusOut: true,
@@ -60,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
       await copyPasteComponent(
         componentPath,
         newComponentName,
-        join(workspaceFolder, newComponentPath),
+        join(workspaceFolderFsPath, newComponentPath),
       )
 
       vscode.window.showInformationMessage(
@@ -73,10 +79,12 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 const validatePath = async (
-  workspaceFolder,
-  componentPath,
+  workspaceFolder: string,
+  componentPath: string,
 ): Promise<boolean> => {
-  const arrComponentPathDenormalized = await componentFinder(workspaceFolder)
+  const arrComponentPathDenormalized: string[] = await componentFinder(
+    workspaceFolder,
+  )
   const arrComponentPath = arrComponentPathDenormalized.map(path =>
     normalize(path),
   )
