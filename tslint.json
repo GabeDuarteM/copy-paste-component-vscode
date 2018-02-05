@@ -47,7 +47,6 @@
     "prefer-template": true,
     "return-undefined": true,
     "variable-name": [true, "ban-keywords", "check-format"],
-
     "no-var-keyword": true,
     "no-parameter-reassignment": true,
     "typedef": [true, "call-signature"],
@@ -74,7 +73,13 @@
     * https://github.com/ajafff/tslint-consistent-codestyle#rules
     */
 
-    "early-exit": true
+    "early-exit": true,
+    "no-accessor-recursion": true,
+    "no-collapsible-if": true,
+    "no-unnecessary-else": true,
+    "object-shorthand-properties-first": true,
+    "prefer-const-enum": true,
+    "prefer-while": true
 
   }
 }
