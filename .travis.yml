@@ -5,6 +5,6 @@ script:
   - node --version && npm --version && yarn --version
   - yarn build:ci
 after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
+  - yarn travis-deploy-once "npm run semantic-release"
 os:
   - linux
