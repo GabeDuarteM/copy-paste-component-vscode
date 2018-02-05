@@ -1,5 +1,6 @@
 # [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) for Visual Studio Code
 
+[![Travis branch](https://img.shields.io/travis/GabrielDuarteM/copy-paste-component-vscode/master.svg)](https://travis-ci.org/GabrielDuarteM/copy-paste-component-vscode)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
