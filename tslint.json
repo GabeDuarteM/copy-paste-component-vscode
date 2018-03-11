@@ -52,14 +52,14 @@
     "typedef": [true, "call-signature"],
 
     /**
-    * Enables tslint-plugin-prettier
-    */
+     * Enables tslint-plugin-prettier
+     */
     "prettier": true,
 
     /**
-    * tslint-immutable rules
-    * https://github.com/jonaskello/tslint-immutable#tslint-rules
-    */
+     * tslint-immutable rules
+     * https://github.com/jonaskello/tslint-immutable#tslint-rules
+     */
 
     "readonly-keyword": true,
     "readonly-array": true,
@@ -69,9 +69,9 @@
     "no-delete": true,
 
     /**
-    * tslint-consistent-codestyle rules
-    * https://github.com/ajafff/tslint-consistent-codestyle#rules
-    */
+     * tslint-consistent-codestyle rules
+     * https://github.com/ajafff/tslint-consistent-codestyle#rules
+     */
 
     "early-exit": true,
     "no-accessor-recursion": true,
@@ -80,6 +80,5 @@
     "object-shorthand-properties-first": true,
     "prefer-const-enum": true,
     "prefer-while": true
-
   }
 }

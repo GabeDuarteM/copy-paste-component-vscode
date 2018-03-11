@@ -1,9 +1,11 @@
 {
   "name": "copy-paste-component-vscode",
   "displayName": "Copy paste component",
-  "description": "An extension to create/generate components, by copying and pasting existing ones.",
+  "description":
+    "An extension to create/generate components, by copying and pasting existing ones.",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component-vscode",
-  "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
+  "author":
+    "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "icon": "assets/icon.png",
   "version": "1.0.1",
   "publisher": "GabrielDuarteM",
@@ -13,20 +15,11 @@
     "url": "https://github.com/GabrielDuarteM/copy-paste-component-vscode.git"
   },
   "bugs": {
-    "url": "https://github.com/GabrielDuarteM/copy-paste-component-vscode/issues"
+    "url":
+      "https://github.com/GabrielDuarteM/copy-paste-component-vscode/issues"
   },
-  "categories": [
-    "Other",
-    "Languages",
-    "Snippets"
-  ],
-  "keywords": [
-    "generator",
-    "component",
-    "copy",
-    "scaffold",
-    "boilerplate"
-  ],
+  "categories": ["Other", "Languages", "Snippets"],
+  "keywords": ["generator", "component", "copy", "scaffold", "boilerplate"],
   "galleryBanner": {
     "color": "#21252b",
     "theme": "dark"
@@ -34,9 +27,7 @@
   "engines": {
     "vscode": "^1.19.0"
   },
-  "activationEvents": [
-    "onCommand:extension.cpc"
-  ],
+  "activationEvents": ["onCommand:extension.cpc"],
   "main": "./out/extension",
   "contributes": {
     "commands": [
@@ -63,8 +54,13 @@
     "build": "tsc -p ./",
     "build:ci": "yarn vscode:prepublish",
     "watch": "yarn build -watch",
-    "lint": "yarn tslint -p tsconfig.json -t code-frame",
-    "lint:fix": "yarn lint --fix",
+    "lint": "yarn lint:ts && yarn lint:prettier",
+    "lint:ts": "yarn tslint -p tsconfig.json -t code-frame",
+    "lint:prettier":
+      "prettier -l \"**/*.{tsx,ts,js,json}\" --ignore-path .gitignore",
+    "lint:fix": "yarn lint:ts:fix && yarn lint:prettier:fix",
+    "lint:ts:fix": "yarn lint:ts --fix",
+    "lint:prettier:fix": "yarn lint:prettier --write",
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "config": {
@@ -73,10 +69,7 @@
     }
   },
   "release": {
-    "verifyConditions": [
-      "semantic-release-vsce",
-      "@semantic-release/github"
-    ],
+    "verifyConditions": ["semantic-release-vsce", "@semantic-release/github"],
     "getLastRelease": "@semantic-release/git",
     "publish": [
       {
@@ -87,7 +80,12 @@
         "path": "@semantic-release/github",
         "assets": "copy-paste-component-vscode.vsix"
       }
-    ]
+    ],
+    "analyzeCommits": {
+      "releaseRules": [
+        { "type": "docs", "scope": "README", "release": "patch" }
+      ]
+    }
   },
   "devDependencies": {
     "@semantic-release/git": "2.2.0",
