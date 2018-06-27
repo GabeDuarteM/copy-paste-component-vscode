@@ -107,6 +107,6 @@
   },
   "dependencies": {
     "copy-paste-component": "^1.2.0",
-    "vscode": "^1.1.13"
+    "vscode": "^1.1.18"
   }
 }
