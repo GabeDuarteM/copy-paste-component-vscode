@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - node
 script:
-  - node --version && npm --version && yarn --version
   - yarn build:ci
 after_success:
-  - yarn travis-deploy-once "npm run semantic-release"
-os:
-  - linux
+  - yarn semantic-release
