@@ -65,7 +65,7 @@ export const activate: (context: vscode.ExtensionContext) => void = context => {
         return
       }
 
-      await copyPasteComponent(
+      copyPasteComponent(
         componentPath,
         newComponentName,
         join(workspaceFolderFsPath, newComponentPath),

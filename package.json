@@ -118,7 +118,7 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
-    "copy-paste-component": "^1.2.0",
-    "vscode": "^1.1.13"
+    "copy-paste-component": "^2.0.0",
+    "vscode": "^1.1.18"
   }
 }
