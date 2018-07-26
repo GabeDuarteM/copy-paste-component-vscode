@@ -112,7 +112,7 @@
     "semantic-release-vsce": "https://github.com/GabrielDuarteM/semantic-release-vsce",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
-    "tslint-consistent-codestyle": "^1.13.1",
+    "tslint-consistent-codestyle": "^1.13.3",
     "tslint-immutable": "^4.6.0",
     "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^2.9.2"
