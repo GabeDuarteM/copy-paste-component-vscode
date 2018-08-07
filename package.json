@@ -37,7 +37,7 @@
   "activationEvents": [
     "onCommand:extension.cpc"
   ],
-  "main": "./out/extension",
+  "main": "./build/extension",
   "contributes": {
     "commands": [
       {
@@ -54,23 +54,18 @@
       ]
     }
   },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
   "scripts": {
-    "cz": "git-cz",
-    "precommit": "yarn build:ci",
-    "semantic-release": "semantic-release",
-    "start": "yarn watch",
-    "vscode:prepublish": "yarn lint && yarn build",
-    "build": "tsc -p ./",
-    "build:ci": "yarn vscode:prepublish",
-    "watch": "yarn build -watch",
-    "lint": "tslint -p tsconfig.json -t code-frame",
+    "release": "semantic-release",
+    "start": "gd-scripts start",
+    "vscode:prepublish": "yarn ci",
+    "build": "gd-scripts build",
+    "ci": "gd-scripts ci",
+    "lint": "gd-scripts lint",
     "lint:fix": "yarn lint --fix",
     "postinstall": "node ./node_modules/vscode/bin/install"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
   },
   "release": {
     "verifyConditions": [
@@ -104,18 +99,12 @@
     "@semantic-release/git": "6.0.1",
     "@semantic-release/github": "^4.2.18",
     "@types/node": "^10.5.1",
-    "commitizen": "^2.10.1",
-    "cz-conventional-changelog": "^2.1.0",
-    "husky": "^0.14.3",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "gd-scripts": "^1.0.2",
     "prettier": "^1.13.7",
     "semantic-release": "^15.6.0",
-    "semantic-release-vsce": "https://github.com/GabrielDuarteM/semantic-release-vsce",
-    "tslint": "^5.10.0",
-    "tslint-config-prettier": "^1.13.0",
-    "tslint-consistent-codestyle": "^1.13.1",
-    "tslint-immutable": "^4.6.0",
-    "tslint-plugin-prettier": "^1.3.0",
-    "typescript": "^2.9.2"
+    "semantic-release-vsce": "https://github.com/GabrielDuarteM/semantic-release-vsce"
   },
   "dependencies": {
     "copy-paste-component": "^2.0.0",

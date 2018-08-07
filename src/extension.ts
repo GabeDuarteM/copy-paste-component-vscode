@@ -1,4 +1,3 @@
-"use strict"
 import {
   componentFinder,
   copyPasteComponent,
@@ -7,6 +6,41 @@ import {
 import { lstatSync } from "fs"
 import { join, normalize, sep as slash } from "path"
 import * as vscode from "vscode"
+
+const validatePath = async (
+  workspaceFolder: string,
+  componentPath: string,
+): Promise<boolean> => {
+  const arrCompPathDenormalized: ReadonlyArray<string> = await componentFinder(
+    workspaceFolder,
+  )
+  const arrComponentPath = arrCompPathDenormalized.map(path => normalize(path))
+
+  const pathInfo = lstatSync(componentPath)
+
+  if (pathInfo.isDirectory()) {
+    vscode.window.showErrorMessage(
+      `The path that you tried to copy is a folder. Please, select the file that contains the component.`,
+    )
+
+    return false
+  }
+
+  const relativeComponentPath = componentPath.replace(
+    workspaceFolder + slash,
+    "",
+  )
+
+  if (!arrComponentPath.includes(relativeComponentPath)) {
+    vscode.window.showErrorMessage(
+      `File ${componentPath} is not a valid component.`,
+    )
+
+    return false
+  }
+
+  return true
+}
 
 export const activate: (context: vscode.ExtensionContext) => void = context => {
   const disposable = vscode.commands.registerCommand(
@@ -78,39 +112,4 @@ export const activate: (context: vscode.ExtensionContext) => void = context => {
   )
 
   context.subscriptions.push(disposable)
-}
-
-const validatePath = async (
-  workspaceFolder: string,
-  componentPath: string,
-): Promise<boolean> => {
-  const arrCompPathDenormalized: ReadonlyArray<string> = await componentFinder(
-    workspaceFolder,
-  )
-  const arrComponentPath = arrCompPathDenormalized.map(path => normalize(path))
-
-  const pathInfo = lstatSync(componentPath)
-
-  if (pathInfo.isDirectory()) {
-    vscode.window.showErrorMessage(
-      `The path that you tried to copy is a folder. Please, select the file that contains the component.`,
-    )
-
-    return false
-  }
-
-  const relativeComponentPath = componentPath.replace(
-    workspaceFolder + slash,
-    "",
-  )
-
-  if (!arrComponentPath.includes(relativeComponentPath)) {
-    vscode.window.showErrorMessage(
-      `File ${componentPath} is not a valid component.`,
-    )
-
-    return false
-  }
-
-  return true
 }
