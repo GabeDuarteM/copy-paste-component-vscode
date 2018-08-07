@@ -97,7 +97,7 @@
   },
   "devDependencies": {
     "@semantic-release/git": "6.0.1",
-    "@semantic-release/github": "^4.2.18",
+    "@semantic-release/github": "^5.0.0",
     "@types/node": "^10.5.7",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-prettier": "^2.6.2",
