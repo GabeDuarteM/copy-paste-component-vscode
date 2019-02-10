@@ -2,10 +2,10 @@ import {
   componentFinder,
   copyPasteComponent,
   getDefaultComponentPath,
-} from "copy-paste-component"
-import { lstatSync } from "fs"
-import { join, normalize, sep as slash } from "path"
-import * as vscode from "vscode"
+} from 'copy-paste-component'
+import { lstatSync } from 'fs'
+import { join, normalize, sep as slash } from 'path'
+import * as vscode from 'vscode'
 
 const validatePath = async (
   workspaceFolder: string,
@@ -14,7 +14,9 @@ const validatePath = async (
   const arrCompPathDenormalized: ReadonlyArray<string> = await componentFinder(
     workspaceFolder,
   )
-  const arrComponentPath = arrCompPathDenormalized.map(path => normalize(path))
+  const arrComponentPath = arrCompPathDenormalized.map((path) =>
+    normalize(path),
+  )
 
   const pathInfo = lstatSync(componentPath)
 
@@ -28,7 +30,7 @@ const validatePath = async (
 
   const relativeComponentPath = componentPath.replace(
     workspaceFolder + slash,
-    "",
+    '',
   )
 
   if (!arrComponentPath.includes(relativeComponentPath)) {
@@ -44,14 +46,14 @@ const validatePath = async (
 
 export const activate = (context: vscode.ExtensionContext): void => {
   const disposable = vscode.commands.registerCommand(
-    "extension.cpc",
+    'extension.cpc',
     async (file: vscode.Uri) => {
       const componentPath: string = file.fsPath
 
       const workspaceFolder = vscode.workspace.getWorkspaceFolder(file)
 
       if (!workspaceFolder) {
-        throw new Error("Workspace folder not found")
+        throw new Error('Workspace folder not found')
       }
 
       const workspaceFolderFsPath = workspaceFolder.uri.fsPath
@@ -67,8 +69,8 @@ export const activate = (context: vscode.ExtensionContext): void => {
 
       const newComponentName = await vscode.window.showInputBox({
         ignoreFocusOut: true,
-        placeHolder: "App",
-        prompt: "What is the name of the new component?",
+        placeHolder: 'App',
+        prompt: 'What is the name of the new component?',
       })
 
       if (!newComponentName) {
@@ -82,12 +84,12 @@ export const activate = (context: vscode.ExtensionContext): void => {
       const defaultComponentPath = getDefaultComponentPath(
         componentPath,
         newComponentName,
-      ).replace(workspaceFolderFsPath + slash, "")
+      ).replace(workspaceFolderFsPath + slash, '')
 
       const newComponentPath = await vscode.window.showInputBox({
         ignoreFocusOut: true,
-        placeHolder: "App",
-        prompt: "What is the location of the new component?",
+        placeHolder: 'App',
+        prompt: 'What is the location of the new component?',
         value: defaultComponentPath,
       })
 
