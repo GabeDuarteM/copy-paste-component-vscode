@@ -69,9 +69,10 @@
       "semantic-release-vsce",
       "@semantic-release/github"
     ],
-    "prepare": [
-      "semantic-release-vsce"
-    ],
+    "prepare": {
+      "path": "semantic-release-vsce",
+      "packageVsix": "copy-paste-component-vscode.vsix"
+    },
     "publish": [
       {
         "path": "semantic-release-vsce",
@@ -98,7 +99,7 @@
     "@types/node": "10.5.7",
     "gd-scripts": "4.0.0",
     "semantic-release": "15.13.3",
-    "semantic-release-vsce": "https://github.com/GabrielDuarteM/semantic-release-vsce"
+    "semantic-release-vsce": "2.1.2"
   },
   "dependencies": {
     "copy-paste-component": "2.0.1",
