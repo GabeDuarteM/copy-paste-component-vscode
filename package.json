@@ -99,10 +99,10 @@
     "@types/node": "10.5.7",
     "gd-scripts": "4.0.0",
     "semantic-release": "15.13.3",
-    "semantic-release-vsce": "2.1.2"
+    "semantic-release-vsce": "2.1.2",
+    "vscode": "1.1.29"
   },
   "dependencies": {
-    "copy-paste-component": "2.0.1",
-    "vscode": "1.1.29"
+    "copy-paste-component": "2.0.1"
   }
 }

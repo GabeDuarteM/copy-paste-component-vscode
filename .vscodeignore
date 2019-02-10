@@ -6,7 +6,6 @@ src/**
 .gitignore
 tsconfig.json
 tslint.json
-assets
 .prettierrc
 .travis.yml
 CHANGELOG.md
