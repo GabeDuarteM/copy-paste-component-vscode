@@ -101,7 +101,7 @@
     "@types/node": "^10.5.7",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-prettier": "^2.6.2",
-    "gd-scripts": "^1.0.2",
+    "gd-scripts": "^4.0.0",
     "prettier": "^1.14.0",
     "semantic-release": "^15.6.0",
     "semantic-release-vsce": "https://github.com/GabrielDuarteM/semantic-release-vsce"
