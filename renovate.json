@@ -2,7 +2,7 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "packageNames": ["@types/chrome", "@types/node"],
+      "packageNames": ["@types/node"],
       "automerge": "true"
     }
   ]

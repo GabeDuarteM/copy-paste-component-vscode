@@ -42,7 +42,7 @@ const validatePath = async (
   return true
 }
 
-export const activate: (context: vscode.ExtensionContext) => void = context => {
+export const activate = (context: vscode.ExtensionContext): void => {
   const disposable = vscode.commands.registerCommand(
     "extension.cpc",
     async (file: vscode.Uri) => {
