@@ -54,9 +54,6 @@
       ]
     }
   },
-  "resolutions": {
-    "babel-core": "^7.0.0-bridge.0"
-  },
   "scripts": {
     "release": "semantic-release",
     "start": "gd-scripts start",
@@ -97,17 +94,17 @@
   },
   "devDependencies": {
     "@semantic-release/git": "6.0.1",
-    "@semantic-release/github": "^4.2.18",
-    "@types/node": "^10.5.7",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-prettier": "^2.6.2",
-    "gd-scripts": "^1.0.2",
-    "prettier": "^1.14.0",
-    "semantic-release": "^15.6.0",
+    "@semantic-release/github": "4.2.18",
+    "@types/node": "10.5.7",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "gd-scripts": "1.0.2",
+    "prettier": "1.14.0",
+    "semantic-release": "15.6.0",
     "semantic-release-vsce": "https://github.com/GabrielDuarteM/semantic-release-vsce"
   },
   "dependencies": {
-    "copy-paste-component": "^2.0.0",
-    "vscode": "^1.1.18"
+    "copy-paste-component": "2.0.0",
+    "vscode": "1.1.18"
   }
 }
