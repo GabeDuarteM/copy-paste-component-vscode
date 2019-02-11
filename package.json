@@ -96,7 +96,7 @@
   "devDependencies": {
     "@semantic-release/git": "7.0.8",
     "@semantic-release/github": "5.2.10",
-    "@types/node": "10.5.7",
+    "@types/node": "10.12.24",
     "gd-scripts": "4.0.0",
     "semantic-release": "15.13.3",
     "semantic-release-vsce": "2.1.2",
