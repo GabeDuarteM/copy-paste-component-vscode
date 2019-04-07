@@ -5,8 +5,8 @@ An extension for you to create new components, using the same structure of the o
 </h4>
 
 <p align="center">
-  <a href="https://travis-ci.org/GabrielDuarteM/copy-paste-component-vscode">
-    <img src="https://img.shields.io/travis/GabrielDuarteM/copy-paste-component-vscode/master.svg" alt="Travis branch">
+  <a href="https://travis-ci.com/GabrielDuarteM/copy-paste-component-vscode">
+    <img src="https://img.shields.io/travis/com/GabrielDuarteM/copy-paste-component-vscode/master.svg" alt="Travis branch">
   </a>
   <a href="http://makeapullrequest.com">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
@@ -50,7 +50,7 @@ And if `App.js` is the following file:
 ### App.js
 
 ```js
-import React from "react"
+import React from 'react'
 
 const App = () => <div className="App-root">Hello World</div>
 
@@ -62,7 +62,7 @@ It will create the following file:
 ### NewApp.js
 
 ```js
-import React from "react"
+import React from 'react'
 
 const NewApp = () => <div className="NewApp-root">Hello World</div>
 
@@ -75,7 +75,7 @@ On Visual Studio Code press `ctrl-p` and enter `ext install GabrielDuarteM.copy-
 
 # See also
 
-* [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) A CLI tool to create components, by copying and pasting existing ones (the API used by this extension).
+- [copy-paste-component](https://github.com/GabrielDuarteM/copy-paste-component) A CLI tool to create components, by copying and pasting existing ones (the API used by this extension).
 
 # Changelog
 
