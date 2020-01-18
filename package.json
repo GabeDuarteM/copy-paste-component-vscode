@@ -94,11 +94,11 @@
     }
   },
   "devDependencies": {
-    "@semantic-release/git": "7.0.8",
-    "@semantic-release/github": "5.2.10",
+    "@semantic-release/git": "7.0.18",
+    "@semantic-release/github": "5.5.8",
     "@types/node": "11.13.9",
     "gd-scripts": "5.0.3",
-    "semantic-release": "15.13.3",
+    "semantic-release": "15.14.0",
     "semantic-release-vsce": "2.2.8",
     "vscode": "1.1.33"
   },
