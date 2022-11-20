@@ -94,8 +94,8 @@
     }
   },
   "devDependencies": {
-    "@semantic-release/git": "7.0.8",
-    "@semantic-release/github": "5.2.10",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "8.0.6",
     "@types/node": "11.13.9",
     "gd-scripts": "5.0.3",
     "semantic-release": "15.13.3",
